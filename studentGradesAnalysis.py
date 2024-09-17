@@ -11,8 +11,7 @@ def getitem():
 def highestScore():
     top_students = sorted(students, key=lambda student: student[1], reverse=True)[:3]
     print(f"Top students are:")
-    for name, score in top_students:
-        print(f"Name: {name}, Score:{score}")
+    iterateStudents(top_students)
 
 #Failed Students:
 #Identify and print the names of students who scored below 51, along with their scores.
@@ -20,8 +19,12 @@ def failedStudents():
     failedStudents = [student for student in students if student[1] < 51]
 
     print("Failed students:")
-    for name, score in failedStudents:
+    iterateStudents(failedStudents)
+
+def iterateStudents(students):
+    for name, score in students:
         print(f"Name: {name}, Score:{score}")
+
 
 getitem()
 highestScore()
